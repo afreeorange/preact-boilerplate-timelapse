@@ -34,6 +34,12 @@ module.exports = {
               ],
             }
           }, // babel-loader
+          {
+            loader: 'eslint-loader',
+            options: {
+              emitWarning: true,
+            },
+          }, // eslint-loader
         ]
       }
     ]
