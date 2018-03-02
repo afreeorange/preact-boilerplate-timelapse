@@ -6,7 +6,21 @@ module.exports = {
   entry: [
     './src/App.js',
   ],
-  module: {},
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            }
+          }
+        ]
+      }
+    ]
+  },
   output: {
     path: path.resolve(__dirname, outputFolder),
     publicPath: '/',
