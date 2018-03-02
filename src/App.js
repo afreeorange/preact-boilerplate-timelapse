@@ -1,3 +1,6 @@
-const foo = 'bar';
+import { h, render, Component } from 'preact'
 
-document.body.appendChild(document.createTextNode(foo));
+render(
+  h('h1', null, 'I am a Preact app!'),
+  document.body,
+)
