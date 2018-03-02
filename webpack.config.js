@@ -1,6 +1,7 @@
 const path = require("path");
 const HTMLPlugin = require('html-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
+const uglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const outputFolder = "./dist";
 const indexTemplate = new HTMLPlugin({
@@ -53,6 +54,7 @@ module.exports = {
   plugins: [
     new cleanWebpackPlugin([outputFolder]),
     indexTemplate,
+    new uglifyJSPlugin(),
   ],
   devServer: {
     contentBase: path.resolve(__dirname, outputFolder),
