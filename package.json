@@ -1,0 +1,21 @@
+{
+  "name": "preact-setup-timelapse",
+  "version": "1.0.0",
+  "description": "A git-based time-lapse of a Preact project setup for my own sanity given the state of frontend development",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  },
+  "keywords": [
+    "preact"
+  ],
+  "author": "Nikhil Anand",
+  "license": "MIT"
+}
