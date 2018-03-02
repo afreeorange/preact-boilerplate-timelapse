@@ -1,5 +1,6 @@
 const path = require("path");
 const HTMLPlugin = require('html-webpack-plugin');
+const cleanWebpackPlugin = require('clean-webpack-plugin');
 
 const outputFolder = "./dist";
 const indexTemplate = new HTMLPlugin({
@@ -50,6 +51,7 @@ module.exports = {
     filename: 'App.js',
   },
   plugins: [
+    new cleanWebpackPlugin([outputFolder]),
     indexTemplate,
   ],
   devServer: {
