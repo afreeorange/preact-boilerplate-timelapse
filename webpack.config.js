@@ -21,7 +21,6 @@ const indexTemplate = new HTMLPlugin({
 const CSSExtractor = new ExtractTextPlugin('App.css');
 
 module.exports = {
-  mode: !process.env.DEBUG ? 'development' : 'production',
   entry: [
     './src/App.js',
   ],
@@ -76,7 +75,7 @@ module.exports = {
     CSSExtractor,
     indexTemplate,
     new uglifyJSPlugin(),
-    // new StyleLintPlugin(),
+    new StyleLintPlugin(),
   ],
   devServer: {
     contentBase: path.resolve(__dirname, outputFolder),
