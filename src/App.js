@@ -1,5 +1,3 @@
 const foo = 'bar';
 
-for (let char of "abcde") {
-  console.log(char);
-}
+document.body.appendChild(document.createTextNode(foo));

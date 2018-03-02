@@ -1,5 +1,19 @@
 const path = require("path");
+const HTMLPlugin = require('html-webpack-plugin');
+
 const outputFolder = "./dist";
+const indexTemplate = new HTMLPlugin({
+  template: './src/index.html',
+  favicon: './src/favicon.ico',
+  minify: {
+    collapseWhitespace: true,
+    html5: true,
+    minifyCSS: true,
+    removeAttributeQuotes: true,
+    removeComments: true,
+    removeEmptyAttributes: true,
+  },
+});
 
 module.exports = {
   mode: !process.env.DEBUG ? 'development' : 'production',
@@ -26,7 +40,9 @@ module.exports = {
     publicPath: '/',
     filename: 'App.js',
   },
-  plugins: [],
+  plugins: [
+    indexTemplate,
+  ],
   devServer: {
     contentBase: path.resolve(__dirname, outputFolder),
     compress: true,
