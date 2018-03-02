@@ -3,6 +3,7 @@ const HTMLPlugin = require('html-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
 const uglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const outputFolder = "./dist";
 const indexTemplate = new HTMLPlugin({
@@ -75,6 +76,7 @@ module.exports = {
     CSSExtractor,
     indexTemplate,
     new uglifyJSPlugin(),
+    // new StyleLintPlugin(),
   ],
   devServer: {
     contentBase: path.resolve(__dirname, outputFolder),
