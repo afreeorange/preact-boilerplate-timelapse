@@ -9,7 +9,7 @@ See the [commit history](https://github.com/afreeorange/preact-boilerplate-timem
 
 * Uses Preact with JSX
 * Uses Sass
-* Lints both
+* Lints both Sass and ES6
 * Base64-encodes fonts and pictures
 
-[This exists](https://github.com/developit/preact-boilerplate) but I wanted to understand the setup instead of using pre-existing boilerplate (which is undoubtedly useful if one's in a hurry.) I look forward to doing this all over again when the tooling changes in 3 months.
+[This exists](https://github.com/developit/preact-boilerplate) but I wanted to understand the setup instead of using pre-existing boilerplate (which is undoubtedly useful if one's in a hurry.) I look forward to doing this all over again when the tooling changes in 3 months 🤘
