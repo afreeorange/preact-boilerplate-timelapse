@@ -1,12 +1,12 @@
-const path = require("path");
+const path = require('path');
 const HTMLPlugin = require('html-webpack-plugin');
-const cleanWebpackPlugin = require('clean-webpack-plugin');
-const uglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-var StyleLintPlugin = require('stylelint-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
-const outputFolder = "./dist";
-const indexTemplate = new HTMLPlugin({
+const outputFolder = './dist';
+const IndexTemplate = new HTMLPlugin({
   template: './src/index.html',
   favicon: './src/favicon.ico',
   minify: {
@@ -36,7 +36,7 @@ module.exports = {
               plugins: [
                 ['transform-react-jsx', { pragma: 'h' }],
               ],
-            }
+            },
           }, // babel-loader
           {
             loader: 'eslint-loader',
@@ -44,7 +44,7 @@ module.exports = {
               emitWarning: true,
             },
           }, // eslint-loader
-        ]
+        ],
       }, // Javascript
 
       {
@@ -67,7 +67,7 @@ module.exports = {
         test: /\.(jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
         use: 'base64-inline-loader',
       }, // Assets
-    ]
+    ],
   },
   output: {
     path: path.resolve(__dirname, outputFolder),
@@ -75,10 +75,10 @@ module.exports = {
     filename: 'App.js',
   },
   plugins: [
-    new cleanWebpackPlugin([outputFolder]),
+    new CleanWebpackPlugin([outputFolder]),
     CSSExtractor,
-    indexTemplate,
-    new uglifyJSPlugin(),
+    IndexTemplate,
+    new UglifyJSPlugin(),
     new StyleLintPlugin(),
   ],
   devServer: {
@@ -86,4 +86,4 @@ module.exports = {
     compress: true,
     port: 9000,
   },
-}
+};
